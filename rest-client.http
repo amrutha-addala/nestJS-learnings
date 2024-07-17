@@ -1,0 +1,80 @@
+GET http://localhost:3000
+
+### SEND FETCH SONGS REQUEST
+GET http://localhost:3000/songs?page=1&limit=2
+
+### Find SONGS REQUEST
+GET http://localhost:3000/songs/1
+
+### Delete SONGS REQUEST
+DELETE http://localhost:3000/songs/1
+
+### Create New SONGS REQUEST
+POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+    "title": "Tum Hi Ho",
+    "artists": [1, 2],
+    "releaseDate": "2020-07-15",
+    "duration": "04:22",
+    "lyrics": "Hum Tere Bin Ab Reh Nahi Sakte Tere Bina Kya Wajood Mera Hum Tere Bin Ab Reh Nahi Sakte Tere Bina Kya Wajood Mera..."
+}
+
+### Update SONGS REQUEST
+PUT http://localhost:3000/songs/5
+Content-Type: application/json
+
+{
+    "lyrics": ""
+}
+
+### Create User
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "firstName": "Amrutha",
+    "lastName": "Addala",
+    "email": "amrutha1@gmail.com",
+    "password": "123456"
+}
+
+### Create User
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "amrutha1@gmail.com",
+    "password": "123456"
+}
+
+### Get user profile
+GET http://localhost:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbmR1QHlvcG1haWwuY29tIiwic3ViIjo0LCJpYXQiOjE3MjA3ODkzODIsImV4cCI6MTcyMDg3NTc4Mn0.12K69Hj4-fbp_McZUUpOMVogb3_i7pQcgwsdh8bLLwE
+
+### Enable 2FA
+GET http://localhost:3000/auth/enable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcnRpbmdhcnJpeEBnbWFpbC5jb20iLCJ1c2VySWQiOjQ2LCJpYXQiOjE2ODU3ODYzODksImV4cCI6MTY4NTg3Mjc4OX0.dxUxLCYS8YFLGkVXMu85DMJy5ev1CJGj_vP7Qx8v8hA
+
+### Validate 2FA Token
+POST http://localhost:3000/auth/validate-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcnRpbmdhcnJpeEBnbWFpbC5jb20iLCJ1c2VySWQiOjQ2LCJpYXQiOjE2ODU3ODYzODksImV4cCI6MTY4NTg3Mjc4OX0.dxUxLCYS8YFLGkVXMu85DMJy5ev1CJGj_vP7Qx8v8hA
+Content-Type: application/json
+
+{
+    "token": "993913"
+}
+
+### Disable 2FA
+GET http://localhost:3000/auth/disable-2fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4xMkBnbWFpbC5jb20iLCJ1c2VySWQiOjEsImlhdCI6MTY4NDkxMTk3OCwiZXhwIjoxNjg0OTk4Mzc4fQ.qbBHZfu0VL_tY_bC2ccl1I_Xoc0IqG6wAk-D2-tZDa8
+
+
+### Access Profile
+GET http://localhost:3000/auth/profile
+Authorization: Bearer 17838da8-99a7-443f-89fa-ba7338581ee0
+
+### Test Env
+
+GET http://localhost:3000/auth/test
